@@ -37,7 +37,7 @@ public class App {
                     json.put("succes", "true");
                     // Once the request to the SIFARE is done, te response is sent again to the
                     // server
-                    setTimeout(() -> socket.emit("pgof_response", json), 1000);
+                    Sifare(() -> socket.emit("pgof_response", json), 1000);
                 }
             });
 
@@ -47,7 +47,8 @@ public class App {
         }
     }
 
-    public static void setTimeout(Runnable runnable, int delay) {
+    // this funtion is used as placeholder for the dlls
+    public static void Sifare(Runnable runnable, int delay) {
         new Timer().schedule(new TimerTask() {
             @Override
             public void run() {
